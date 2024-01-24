@@ -157,13 +157,13 @@ surveys_long <- surveys %>%
   pivot_longer(names_to = "measurement", values_to = "values", cols = c(hindfoot_length, weight))
 view(surveys_long)
 
-# 2 NON FUNZIONA
+# 2
 surveys_long %>% 
   group_by(year, measurement, plot_type) %>% 
   summarise(mean_value = mean(values, na.rm=T)) %>% 
   pivot_wider(names_from = measurement, values_from = mean_value)
 
-#3
+# 3
 surveys_complete <- surveys %>% 
   filter(!is.na(weight),
          !is.na (hindfoot_length),
