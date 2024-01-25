@@ -144,7 +144,7 @@ surveys_complete %>%
 plt <- surveys_complete %>% 
   count (year, genus, sex) %>% 
   ggplot (mapping = aes(x=year, y=n, color=sex)) + 
-  geom_line()+
+  geom_line(linewidth=2)+
   facet_wrap(facets = vars(genus)) +
   scale_color_manual(values = c ("green", "orange"),
                      labels = c ("female", "male"),
